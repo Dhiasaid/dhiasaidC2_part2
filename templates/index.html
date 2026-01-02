@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dhia Eddine Saïd – Secure C2 Dashboard</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <header>
+        <h1>Secure Command & Control Dashboard</h1>
+        <p class="subtitle">
+            Author: <strong>Dhia Eddine Saïd</strong> |
+            Transport: <span class="secure">TLS Encrypted</span>
+        </p>
+    </header>
+
+    <section>
+        <h2>Connected Agents</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Agent ID</th>
+                    <th>IP Address</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for i in range(threads|length) %}
+                <tr>
+                    <td>Agent {{ i + 1 }}</td>
+
+                    {% if ips[i] %}
+                        <td>{{ ips[i] }}</td>
+                        <td class="status online">Online</td>
+                        <td>
+                            <a href="{{ url_for('executecmd', agentname='Agent ' ~ (i+1)) }}">
+                                <button>Control</button>
+                            </a>
+                        </td>
+                    {% else %}
+                        <td>-</td>
+                        <td class="status offline">Offline</td>
+                        <td>
+                            <button disabled>Unavailable</button>
+                        </td>
+                    {% endif %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+
+    <footer>
+        <p>
+            All communications are protected using <strong>TLS encryption</strong>.
+            <br>
+            This system is designed for <em>educational and laboratory use only</em>.
+        </p>
+    </footer>
+
+</body>
+</html>
+

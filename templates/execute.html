@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Execute Command - {{ name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <header>
+        <h1>Execute Command on {{ name }}</h1>
+        <p class="subtitle">Secure TLS connection ensured for this agent</p>
+        <a href="{{ url_for('home') }}"><button>← Back to Dashboard</button></a>
+    </header>
+
+    <section class="command-section">
+        <form action="{{ url_for('execute', agentname=name) }}" method="POST">
+            <input type="text" name="command" placeholder="Enter command" required>
+            <button type="submit">Run</button>
+        </form>
+    </section>
+
+    {% if cmdoutput %}
+    <section class="output-section">
+        <h3>Output:</h3>
+        <pre>{{ cmdoutput }}</pre>
+    </section>
+    {% else %}
+    <section class="output-section">
+        <p>No command output yet.</p>
+    </section>
+    {% endif %}
+
+    <footer>
+        <p>All commands are transmitted securely via TLS. <br> For educational and laboratory purposes only.</p>
+    </footer>
+
+</body>
+</html>
+
