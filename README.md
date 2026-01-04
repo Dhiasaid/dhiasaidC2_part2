@@ -259,3 +259,5 @@ Wireshark est un outil puissant pour analyser le trafic réseau en détail. Vous
 Si vous rencontrez des problèmes non couverts par ce guide, plusieurs ressources sont disponibles pour obtenir de l'aide. La documentation officielle de Python, Flask, et les bibliothèques SSL fournit des informations détaillées sur le fonctionnement de ces technologies. Les forums de développeurs comme Stack Overflow contiennent des réponses à de nombreux problèmes courants. Les communautés GitHub et les issues du projet peuvent contenir des informations sur les bogues connus et leurs solutions.
 
 Pour les problèmes de sécurité, suivez les bonnes pratiques de sécurité et ne partagez jamais d'informations sensibles comme les clés privées ou les mots de passe dans les forums publics. Si vous découvre une vulnérabilité dans le système, signalez-la de manière responsable aux mainteneurs du projet avant de la publier.
+# dhiasaidC2_part2
+hi
