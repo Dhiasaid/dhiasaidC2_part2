@@ -1,0 +1,34 @@
+.command-section input[type="text"] {
+    width: 60%;
+    padding: 8px;
+    margin-right: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.command-section button {
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+.command-section button:hover {
+    background-color: #45a049;
+}
+
+.output-section pre {
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+footer {
+    margin-top: 30px;
+    font-size: 0.9em;
+    color: #555;
+}
+
